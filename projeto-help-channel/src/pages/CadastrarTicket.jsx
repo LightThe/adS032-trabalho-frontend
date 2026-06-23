@@ -1,7 +1,9 @@
+import NovoTicket from "../components/NovoTicket";
+
 export default function CadastrarTicket() {
-    return(
-        <>
-        <h1>cadastro</h1>
-        </>
-    )
+  return (
+    <>
+      <NovoTicket />
+    </>
+  );
 }
