@@ -1,18 +1,21 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router";
+import { buscarUsuario } from "../services/usuarioService";
 
 const UserContext = createContext();
 
 function UserProvider({ children }) {
   const navigate = useNavigate();
   const [usuario, setUsuario] = useState({});
-  // TODO: buscar, de fato, um usuário com role "user" ou "admin" de acordo com a userRole recebida
-  const entrar = (userRole) => {
-    const user = {id: "1234asdf",
-    nome: "Fulano de Tal",
-    role: userRole,}
-    setUsuario(user);
+
+  const entrar = async (userRole) => {
+    // const contextualizarUsuario = async () => {
+    // }
+    const res = await buscarUsuario(userRole);
+    setUsuario(res[0]);
+    // contextualizarUsuario();
   };
+
   const sair = () => {
     setUsuario({});
     navigate("/");
