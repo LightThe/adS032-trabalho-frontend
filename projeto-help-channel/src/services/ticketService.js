@@ -1,54 +1,54 @@
-// FIXME: placeholder, precisa desenvolver toda essa conexão
-
+const url = "http://localhost:3000/tickets";
 async function listar() {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  return [
-    {
-      titulo: "Problema de rede",
-      status: "cancelado",
-      data: "25/10/1913",
-      descricao:
-        "Início do Texto Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-      usuario: "vhj8rfe9wq0",
-    },
-    {
-      titulo: "Não consigo acessar",
-      status: "concluido",
-      data: "25/10/1913",
-      descricao:
-        "Início do Texto Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-      usuario: "vhj8rfe9wq0",
-    },
-    {
-      titulo: "Instalação de software",
-      status: "aberto",
-      data: "25/10/1913",
-      descricao:
-        "Início do Texto Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-      usuario: "vhj8rfe9wq0",
-    },
-  ];
+  try {
+    const response = await fetch(url);
+    const dados = await response.json();
+    return dados;
+  } catch (error) {
+    console.error("erro ao buscar tickets " + error.message);
+  }
 }
+
 async function listarPorUsuario(idUsuario) {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  return [{
-      titulo: "Instalação de software",
-      status: "aberto",
-      data: "25/10/1913",
-      descricao:
-        "Início do Texto Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-      usuario: idUsuario,
-    },
-  ]
+  try {
+    const response = await fetch(`${url}?usuario=${idUsuario}`);
+    const dados = await response.json();
+    return dados;
+  } catch (error) {
+    console.error("erro ao buscar tickets do usuario " + error.message);
+  }
 }
 
-async function criarTicket(payload) {
-  // implementar chamada real à API
-  return await fetch("/api/tickets", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
+async function criar(ticket) {
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(ticket),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    const dados = await res.json();
+    return dados;
+  } catch (error) {
+    console.error("Erro ao criar ticket: ", error.message);
+  }
 }
 
-export { listar, listarPorUsuario, criarTicket };
+async function atualizar(ticket){
+  try {
+    const res = await fetch(url, {
+      method: "PUT",
+      body: JSON.stringify(ticket),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    const dados = await res.json();
+    return dados;
+  } catch (error) {
+    console.error("Erro ao atualizar dados do ticket: ", error.message);
+  }
+}
+
+export { listar, listarPorUsuario, criar, atualizar };

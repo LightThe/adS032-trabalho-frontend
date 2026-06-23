@@ -18,11 +18,10 @@ export default function ListagemTickets() {
 
   useEffect(() => {
     const obterTickets = async () => {
-      if(usuario.role === "admin"){
+      if (usuario.role === "admin") {
         const res = await listar();
         setTickets(res);
-      }
-      else{
+      } else {
         const res = await listarPorUsuario(usuario.id);
         setTickets(res);
       }
@@ -32,7 +31,9 @@ export default function ListagemTickets() {
 
   return (
     <section className="bg-taupe-200 p-4 m-4 rounded-lg">
-      <h3 className="text-xl font-bold">{usuario.role == "admin" ? "Últimos": "Meus"} Tickets</h3>
+      <h3 className="text-xl font-bold">
+        {usuario.role == "admin" ? "Últimos" : "Meus"} Tickets
+      </h3>
       {tickets.map((item, key) => (
         <article key={key} className="bg-taupe-300 p-2 my-2 rounded-lg">
           <header className="flex justify-between">
@@ -45,7 +46,9 @@ export default function ListagemTickets() {
           </header>
           <h5 className="text-sm">{item.data}</h5>
           <p>{item.descricao}</p>
-          <button className="bg-blue-900 text-white py-1 px-2 rounded">Acessar</button>
+          <button className="bg-blue-900 text-white py-1 px-2 rounded">
+            Acessar
+          </button>
         </article>
       ))}
     </section>

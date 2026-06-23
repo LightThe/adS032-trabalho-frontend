@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 // Ajuste os caminhos de importação conforme a estrutura do seu projeto
 import { UserContext } from "../contexts/UserContext";
-import { criarTicket } from "../services/ticketService";
+import { criar } from "../services/ticketService";
 import InputCard from "./InputCard";
 
 export default function CadastrarTicket() {
@@ -52,7 +52,7 @@ export default function CadastrarTicket() {
 
     try {
       // Chama a camada de serviço
-      await criarTicket(payload);
+      await criar(payload);
 
       // Redireciona imediatamente em caso de sucesso
       navigate("/tickets");

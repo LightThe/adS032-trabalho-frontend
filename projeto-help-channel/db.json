@@ -1,0 +1,57 @@
+{
+  "tickets": [
+    {
+      "titulo": "Problema com a impressora",
+      "descricao": "Estou tentando usar a impressora no térreo, mas meu computador não consegue se conectar a ela, sempre retorna um erro falando que falta tinta magenta, sendo que eu nem me conectei ainda.",
+      "usuario": "iIzcRMggE4A",
+      "status": "aberto",
+      "data": "2026-06-23T21:17:27.863Z",
+      "id": "YmiTQKeKABw"
+    },
+    {
+      "titulo": "Erro na rede",
+      "descricao": "O wifi do 6º andar está intermitente desde a semana passada, será se podemos colocar fogo no prédio?",
+      "usuario": "iIzcRMggE4A",
+      "status": "aberto",
+      "data": "2026-06-23T21:18:03.271Z",
+      "id": "0Giax5Kiu0w"
+    },
+    {
+      "titulo": "Ticket de outro usuário",
+      "descricao": "Eu queria conseguir fazer alguma coisa legal, mas eu não sou o usuário que escreve os tickets. O que fazer?",
+      "usuario": "YmiTQKeKABw",
+      "status": "aberto",
+      "data": "2026-06-23T21:18:36.991Z",
+      "id": "oN329Gp6HmE"
+    },
+    {
+      "titulo": "Máquina de café",
+      "descricao": "EU QUERO CAFÉ, ESSA PORCARIA SÓ SAI ÁGUA",
+      "usuario": "iIzcRMggE4A",
+      "status": "concluido",
+      "data": "2026-06-23T21:19:37.727Z",
+      "id": "T6EaUKDBLtY"
+    },
+    {
+      "titulo": "Aumente suas vendas",
+      "descricao": "Clique AGORA MESMO nesse link para fazer com que suas vendas aumentem em até 180x. TOTALMENTE SEGURO PODE CONFIAR http://sketchysebsite.net",
+      "usuario": "iIzcRMggE4A",
+      "status": "cancelado",
+      "data": "2026-06-23T21:21:42.056Z",
+      "id": "-QjnGuhfG24"
+    }
+  ],
+  "usuarios": [
+    {
+      "nome": "Fulano de tal",
+      "role": "user",
+      "id": "iIzcRMggE4A"
+    },
+    {
+      "nome": "Super Fulano de tal",
+      "role": "admin",
+      "id": "x18nED4vWDY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
