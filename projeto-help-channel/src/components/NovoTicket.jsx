@@ -62,8 +62,8 @@ export default function CadastrarTicket() {
   };
 
   return (
-    <div className="container-ticket-novo">
-      <h2>Criar Novo Ticket</h2>
+    <section className="container-ticket-novo m-6 bg-mist-200 rounded-xl">
+      <h1 className="text-2xl font-bold m-4 pt-2">Novo Ticket</h1>
       
       <form onSubmit={handleSubmit} noValidate>
         {/* Campo: Título */}
@@ -96,7 +96,7 @@ export default function CadastrarTicket() {
           Criar ticket
         </button>
       </form>
-    </div>
+    </section>
   );
 }
 
