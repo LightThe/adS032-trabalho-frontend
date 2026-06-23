@@ -42,4 +42,13 @@ async function listarPorUsuario(idUsuario) {
   ]
 }
 
-export { listar, listarPorUsuario };
+async function criarTicket(payload) {
+  // implementar chamada real à API
+  return await fetch("/api/tickets", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
+
+export { listar, listarPorUsuario, criarTicket };
