@@ -5,8 +5,8 @@ import { useNavigate } from "react-router";
 export default function Home() {
   const navigate = useNavigate();
   const { entrar } = useContext(UserContext);
-  const handleEntrar = (userRole) =>{
-    entrar(userRole);
+  const handleEntrar = async (userRole) =>{
+    await entrar(userRole);
     navigate('/tickets');
   }
   return (
